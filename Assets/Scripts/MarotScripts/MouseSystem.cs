@@ -3,7 +3,7 @@
 /// 该脚本用于监控玩家的鼠标变量
 /// 马罗 2023 08 26
 /// V 1.0.0
-/// 目前只有鼠标点击物块即高亮的效果
+/// 目前鼠标点击物块即查看角色在该位置时的视角
 /// </summary>
 public class MouseSystem : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class MouseSystem : MonoBehaviour
         {
             Vector2 mousePos = Input.mousePosition;
             Vector2 worldPos = mainCamera.ScreenToWorldPoint(mousePos);
-            RoomSystem.instance.ClickBlock(worldPos);
+            RoomSystem.instance.OpenPlayerVisible((int)worldPos.x, (int)worldPos.y);
         }
     }
 }
